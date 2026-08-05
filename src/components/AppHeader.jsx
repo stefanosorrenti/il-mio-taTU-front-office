@@ -1,5 +1,6 @@
 //IMPORTS
 import logo from '../assets/images/logo.png'
+import { NavLink } from 'react-router-dom'
 
 
 export default function AppHeader() {
@@ -7,7 +8,8 @@ export default function AppHeader() {
         <>
             <header>
                 {/* NavBar */}
-                <nav className="navbar navbar-expand-md bg-body-light">
+                
+                <nav className="navbar navbar-expand-md navbar-light bg-light shadow-sm">
                     <div className="container-fluid flex-md-column">
 
                         {/* Logo */}
@@ -22,13 +24,13 @@ export default function AppHeader() {
                         <div className="collapse navbar-collapse" id="navbarNav">
                             <ul className="navbar-nav">
                                 <li className="nav-item">
-                                    <a className="nav-link" aria-current="page" href="#">LINK</a>
+                                    <NavLink className="nav-link" to="/">LINK</NavLink>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="#">LINK</a>
+                                    <NavLink className="nav-link" to="/">LINK</NavLink>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="#">LINK</a>
+                                    <NavLink className="nav-link" to="/">LINK</NavLink>
                                 </li>
                             </ul>
                         </div>
