@@ -10,7 +10,7 @@ export default function DefaultLayout() {
         <>
             <AppHeader />
             
-            <main>
+            <main className="container-fluid p-0">
                 <Outlet />
             </main>
 

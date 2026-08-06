@@ -1,15 +1,16 @@
 //IMPORTS
 import logo from '../assets/images/logo.png'
+import AppJumbotron from './AppJumbotron'
 import { NavLink } from 'react-router-dom'
 
 
 export default function AppHeader() {
     return (
         <>
-            <header>
+            <header className="bg-light shadow-sm">
+
                 {/* NavBar */}
-                
-                <nav className="navbar navbar-expand-md navbar-light bg-light shadow-sm">
+                <nav className="navbar navbar-expand-md navbar-light ">
                     <div className="container-fluid flex-md-column">
 
                         {/* Logo */}
@@ -36,6 +37,10 @@ export default function AppHeader() {
                         </div>
                     </div>
                 </nav>
+
+
+                {/* Jumbotron */}
+                <AppJumbotron />
             </header>
         </>
     )
