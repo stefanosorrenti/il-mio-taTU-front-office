@@ -1,10 +1,14 @@
 //IMPORTS
 import logo from '../assets/images/logo.png'
 import AppJumbotron from './AppJumbotron'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useLocation, Link } from 'react-router-dom'
 
 
 export default function AppHeader() {
+
+    /* Pathname */
+    const { pathname } = useLocation()
+    
     return (
         <>
             <header className="bg-light shadow-sm">
@@ -14,9 +18,9 @@ export default function AppHeader() {
                     <div className="container-fluid flex-md-column">
 
                         {/* Logo */}
-                        <a className="navbar-brand d-md-flex justify-content-md-center mx-0" href="#">
-                            <img src={logo} alt="Logo" style={{ width: '200px'  }} />
-                        </a>
+                        <Link className="navbar-brand d-md-flex justify-content-md-center mx-0" to="/">
+                            <img src={logo} alt="Logo" style={{ width: '200px' }} />
+                        </Link>
                         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                             <span className="navbar-toggler-icon"></span>
                         </button>
@@ -40,7 +44,8 @@ export default function AppHeader() {
 
 
                 {/* Jumbotron */}
-                <AppJumbotron />
+                {pathname === '/' && <AppJumbotron />}
+                
             </header>
         </>
     )
