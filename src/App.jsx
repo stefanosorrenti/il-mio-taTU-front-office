@@ -5,6 +5,7 @@ import axios from "axios"
 import AppHomePage from "./pages/AppHomePage"
 import DefaultLayout from "./layouts/DefaultLayout"
 import AppSingleTattooPage from "./pages/AppSingleTattooPage"
+import AppNotFoundPage from "./pages/AppNotFoundPage"
 
 function App() {
 
@@ -14,7 +15,8 @@ function App() {
       <Routes>
         <Route element={<DefaultLayout />}>
           <Route path="/" element={<AppHomePage />} />
-          <Route path="/tattoos/:id" element={<AppSingleTattooPage tattoo= 'PASSIAMO ARRAY TATTOO' />} />
+          <Route path="/tattoos/:id" element={<AppSingleTattooPage />} />
+          <Route path="*" element={<AppNotFoundPage />} />
         </Route>
       </Routes>
 
