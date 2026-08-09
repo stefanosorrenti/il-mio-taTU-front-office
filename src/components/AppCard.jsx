@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 export default function AppCard({ tattoo }) {
     return (
         <div className="card h-100">
@@ -6,7 +8,7 @@ export default function AppCard({ tattoo }) {
                 <h5 className="card-title">{tattoo.title}</h5>
                 <p className="card-text">{tattoo.description}</p>
                 <p className="card-text">Price: ${tattoo.price}</p>
-                <a href={`/tattoos/${tattoo.id}`} className="btn  btn-outline-warning">Go somewhere</a>
+                <Link to={`/tattoos/${tattoo.id}`} className="btn  btn-outline-warning">Go somewhere</Link>
             </div>
         </div>
     )
