@@ -2,6 +2,8 @@
 import logo from '../assets/images/logo.png'
 import AppJumbotron from './AppJumbotron'
 import { NavLink, useLocation, Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
+
 
 
 export default function AppHeader() {
@@ -29,7 +31,7 @@ export default function AppHeader() {
                         <div className="collapse navbar-collapse" id="navbarNav">
                             <ul className="navbar-nav">
                                 <li className="nav-item">
-                                    <NavLink className="nav-link" to="/">LINK</NavLink>
+                                    <motion.NavLink className="nav-link" to="/">LINK</motion.NavLink>
                                 </li>
                                 <li className="nav-item">
                                     <NavLink className="nav-link" to="/">LINK</NavLink>

@@ -2,7 +2,9 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from 'react';
 import AppSpinner from '../components/AppSpinner';
+import { motion } from 'framer-motion';
 import axios from 'axios';
+import AppAnimatedButton from "../components/AppAnimatedButton";
 
 export default function AppSingleTattooPage() {
 
@@ -46,10 +48,29 @@ export default function AppSingleTattooPage() {
 
     }, []);
 
+    //FUNCTIONS
+
+    /* Funzione di condivisione (Web Share Api) */
+    function handleShareClick() {
+
+        const shareData = {
+            title: singleTattoo.title,
+            text: singleTattoo.description || 'Nessuna descrizione disponibile.',
+            url: window.location.href
+        };
+        if (navigator.share) {
+            navigator.share(shareData)
+                .then(() => console.log('Condivisione avvenuta con successo'))
+                .catch((error) => console.log('Errore nella condivisione:', error));
+        } else {
+            console.log('La condivisione non è supportata dal browser');
+        }
+    }
+
 
 
     return (
-        <div className="min-vh-100 bg-black d-flex align-items-center justify-content-center py-5" data-bs-theme="dark">
+        <div className="min-vh-100 bg-dark d-flex align-items-center justify-content-center py-5" data-bs-theme="dark">
 
             {/* Stato: errore */}
             {error && (
@@ -67,12 +88,11 @@ export default function AppSingleTattooPage() {
                 <div className="container py-5">
 
                     {/* Bottone torna indietro */}
-                    <button
+                    <AppAnimatedButton
+                        text="&larr; Torna indietro"
                         onClick={() => navigate(-1)}
                         className="btn btn-outline-secondary rounded-3 py-2 px-4 mb-4 small"
-                    >
-                        &larr; Torna indietro
-                    </button>
+                    />
 
                     <div className="row g-4 g-lg-5 align-items-start">
 
@@ -146,9 +166,11 @@ export default function AppSingleTattooPage() {
                             </div>
 
                             {/* CTA */}
-                            <button className="btn btn-outline-secondary text-light w-100 rounded-3 py-3 fw-semibold fs-5">
-                                Invia ad un amico &rarr;
-                            </button>
+                            <AppAnimatedButton text={<><i className="bi bi-share-fill me-2"></i> Condividi questo tatuaggio</>} 
+                            className="btn btn-outline-secondary text-light w-100 rounded-3 py-3 fw-semibold fs-5"
+                            onClick={handleShareClick}
+
+                            />
 
                         </div>
                     </div>

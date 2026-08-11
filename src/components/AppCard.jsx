@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
 
 export default function AppCard({ tattoo }) {
     return (
         <div className="card h-100 bg-black border border-secondary border-opacity-50 rounded-4 overflow-hidden shadow" data-bs-theme="dark">
 
-            
+
             <div className="ratio ratio-1x1 bg-black">
                 <img
                     src={tattoo.image_path}
@@ -33,13 +34,20 @@ export default function AppCard({ tattoo }) {
                     )}
                 </p>
 
-
-                <Link
-                    to={`/tattoos/${tattoo.id}`}
-                    className="btn btn-outline-secondary text-light w-100 rounded-3 py-2 small mt-auto"
+                <motion.div
+                    whileHover={{
+                        scale: 1.05,
+                        transition: { duration: 0.1 }
+                    }}
+                    transition={{ duration: 0.1 }}
                 >
-                    Scopri di più &rarr;
-                </Link>
+                    <Link
+                        to={`/tattoos/${tattoo.id}`}
+                        className="btn btn-outline-secondary text-light w-100 rounded-3 py-2 small mt-auto"
+                    >
+                        Scopri di più &rarr;
+                    </Link>
+                </motion.div>
             </div>
         </div>
     )
