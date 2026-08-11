@@ -49,7 +49,7 @@ export default function AppSingleTattooPage() {
 
 
     return (
-        <div className="min-vh-100 bg-black d-flex align-items-center justify-content-center py-5">
+        <div className="min-vh-100 bg-black d-flex align-items-center justify-content-center py-5" data-bs-theme="dark">
 
             {/* Stato: errore */}
             {error && (
@@ -74,11 +74,11 @@ export default function AppSingleTattooPage() {
                         &larr; Torna indietro
                     </button>
 
-                    <div className="row g-5 align-items-start">
+                    <div className="row g-4 g-lg-5 align-items-start">
 
                         {/* Colonna sinistra: immagine */}
                         <div className="col-12 col-lg-5">
-                            <div className="ratio ratio-1x1 rounded-4 overflow-hidden border border-secondary border-opacity-25">
+                            <div className="ratio ratio-1x1 rounded-4 overflow-hidden border border-secondary border-opacity-50 shadow-sm">
                                 <img
                                     src={singleTattoo.image_path}
                                     alt={singleTattoo.title}
@@ -94,51 +94,51 @@ export default function AppSingleTattooPage() {
                             <div className="d-flex flex-wrap gap-2 mb-3">
                                 {singleTattoo.styles?.length > 0
                                     ? singleTattoo.styles.map((style, i) => (
-                                        <span key={i} className="badge bg-secondary bg-opacity-25 text-light border border-secondary border-opacity-25 rounded-pill px-3 py-2 small fw-normal">
+                                        <span key={i} className="badge bg-secondary bg-opacity-10 text-light border border-secondary border-opacity-50 rounded-pill px-3 py-2 small fw-normal">
                                             {style.name}
                                         </span>
                                     ))
-                                    : <span className="badge bg-secondary bg-opacity-25 text-secondary rounded-pill px-3 py-2 small fw-normal">Stile N/A</span>
+                                    : <span className="badge bg-secondary bg-opacity-10 text-secondary border border-secondary border-opacity-50 rounded-pill px-3 py-2 small fw-normal">Stile N/A</span>
                                 }
                             </div>
 
                             
-                            <h1 className="text-warning fw-bold display-5 mb-2">
+                            <h1 className="text-white fw-semibold display-5 mb-2">
                                 {singleTattoo.title}
                             </h1>
 
                             
-                            <p className="text-white-50 mb-4">
+                            <p className="text-secondary mb-4">
                                 {singleTattoo.description || 'Nessuna descrizione disponibile.'}
                             </p>
 
-                            <hr className="border-secondary border-opacity-25 my-4" />
+                            <hr className="border-secondary border-opacity-50 my-4" />
 
                             
                             <div className="mb-4">
                                 <p className="text-uppercase text-secondary small fw-semibold mb-3">Artista</p>
-                                <p className="text-warning fw-semibold fs-5 mb-1">
+                                <p className="text-light fw-semibold fs-5 mb-1">
                                     {singleTattoo.artist?.name} {singleTattoo.artist?.surname}
                                 </p>
-                                <p className="text-white-50 mb-0">
+                                <p className="text-secondary mb-0">
                                     {singleTattoo.artist?.nationality?.name} &middot; {singleTattoo.artist?.age} anni
                                 </p>
                             </div>
 
-                            <hr className="border-secondary border-opacity-25 my-4" />
+                            <hr className="border-secondary border-opacity-50 my-4" />
 
                             {/* Prezzo e Durata */}
                             <div className="row g-3 mb-5">
                                 <div className="col-6 col-sm-4">
-                                    <div className="bg-dark rounded-3 p-3 text-center border border-secondary border-opacity-25">
-                                        <p className="text-white-50 small mb-1 text-uppercase">Prezzo</p>
-                                        <p className="text-warning fw-bold fs-4 mb-0">${singleTattoo.price}</p>
+                                    <div className="bg-dark rounded-4 p-3 text-center border border-secondary border-opacity-50 shadow-sm">
+                                        <p className="text-secondary small mb-1 text-uppercase">Prezzo</p>
+                                        <p className="text-light fw-semibold fs-4 mb-0">${singleTattoo.price}</p>
                                     </div>
                                 </div>
                                 <div className="col-6 col-sm-4">
-                                    <div className="bg-dark rounded-3 p-3 text-center border border-secondary border-opacity-25">
-                                        <p className="text-white-50 small mb-1 text-uppercase">Durata</p>
-                                        <p className="text-warning fw-bold fs-4 mb-0">
+                                    <div className="bg-dark rounded-4 p-3 text-center border border-secondary border-opacity-50 shadow-sm">
+                                        <p className="text-secondary small mb-1 text-uppercase">Durata</p>
+                                        <p className="text-light fw-semibold fs-4 mb-0">
                                             {singleTattoo.time ? `${singleTattoo.time} min` : 'N/A'}
                                         </p>
                                     </div>
@@ -146,7 +146,7 @@ export default function AppSingleTattooPage() {
                             </div>
 
                             {/* CTA */}
-                            <button className="btn btn-warning w-100 rounded-3 py-3 fw-semibold text-dark fs-5">
+                            <button className="btn btn-outline-secondary text-light w-100 rounded-3 py-3 fw-semibold fs-5">
                                 Invia ad un amico &rarr;
                             </button>
 

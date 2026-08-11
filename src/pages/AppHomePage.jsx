@@ -30,7 +30,7 @@ export default function AppHomePage() {
 
 
     return (
-        <div className="min-vh-100 bg-black py-5">
+        <div className="min-vh-100 bg-dark py-5">
             <div className="container">
 
                 {/* Stato: errore */}
