@@ -43,7 +43,7 @@ export default function AppCard({ tattoo }) {
                 >
                     <Link
                         to={`/tattoos/${tattoo.id}`}
-                        className="btn btn-outline-secondary text-light w-100 rounded-3 py-2 small mt-auto"
+                        className="btn btn-outline-warning text-light w-100 rounded-3 py-2 small mt-auto"
                     >
                         Scopri di più &rarr;
                     </Link>

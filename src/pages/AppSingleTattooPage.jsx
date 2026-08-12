@@ -167,7 +167,7 @@ export default function AppSingleTattooPage() {
 
                             {/* CTA */}
                             <AppAnimatedButton text={<><i className="bi bi-share-fill me-2"></i> Condividi questo tatuaggio</>} 
-                            className="btn btn-outline-secondary text-light w-100 rounded-3 py-3 fw-semibold fs-5"
+                            className="btn btn-outline-warning text-light w-100 rounded-3 py-3 fw-semibold fs-5"
                             onClick={handleShareClick}
 
                             />
