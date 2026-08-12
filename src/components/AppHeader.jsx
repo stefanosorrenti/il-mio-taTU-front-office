@@ -34,7 +34,7 @@ export default function AppHeader() {
                                     <NavLink className="nav-link" to="/">HOME</NavLink>
                                 </li>
                                 <li className="nav-item">
-                                    <NavLink className="nav-link" to="/">TATTOO</NavLink>
+                                    <NavLink className="nav-link" to="/404">TATTOO</NavLink>
                                 </li>
                                 <li className="nav-item">
                                     <NavLink className="nav-link" to="/info">CHI SIAMO</NavLink>
