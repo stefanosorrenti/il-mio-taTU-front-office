@@ -31,13 +31,13 @@ export default function AppHeader() {
                         <div className="collapse navbar-collapse" id="navbarNav">
                             <ul className="navbar-nav">
                                 <li className="nav-item">
-                                    <motion.NavLink className="nav-link" to="/">LINK</motion.NavLink>
+                                    <NavLink className="nav-link" to="/">HOME</NavLink>
                                 </li>
                                 <li className="nav-item">
-                                    <NavLink className="nav-link" to="/">LINK</NavLink>
+                                    <NavLink className="nav-link" to="/">TATTOO</NavLink>
                                 </li>
                                 <li className="nav-item">
-                                    <NavLink className="nav-link" to="/">LINK</NavLink>
+                                    <NavLink className="nav-link" to="/info">CHI SIAMO</NavLink>
                                 </li>
                             </ul>
                         </div>
