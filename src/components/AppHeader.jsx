@@ -10,13 +10,13 @@ export default function AppHeader() {
 
     /* Pathname */
     const { pathname } = useLocation()
-    
+
     return (
         <>
             <header className="bg-light shadow-sm">
 
                 {/* NavBar */}
-                <nav className="navbar navbar-expand-md navbar-light ">
+                <nav className="navbar navbar-expand-md navbar-light">
                     <div className="container-fluid flex-md-column">
 
                         {/* Logo */}
@@ -45,10 +45,10 @@ export default function AppHeader() {
                 </nav>
 
 
-                {/* Jumbotron */}
-                {pathname === '/' && <AppJumbotron />}
-                
+
             </header>
+            {/* Jumbotron */}
+            {pathname === '/' && <AppJumbotron />}
         </>
     )
 }
