@@ -1,6 +1,7 @@
 //IMPORTS
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import { motion } from 'motion/react'
 import AppCard from '../components/AppCard'
 import AppSpinner from '../components/AppSpinner'
 
@@ -47,10 +48,18 @@ export default function AppHomePage() {
                 {/* Stato: dati pronti */}
                 {!loading && !error && (
                     <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-                        {tattoos.map(tattoo => (
-                            <div className="col" key={tattoo.id}>
+                        {tattoos.map((tattoo) => (
+                            <motion.div
+                                className="col"
+                                key={tattoo.id}
+                                initial={{ opacity: 0, y: 60 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.8 }}
+                                viewport={{ once: true, amount: 0.1 }}
+                                
+                            >
                                 <AppCard tattoo={tattoo} />
-                            </div>
+                            </motion.div>
                         ))}
                     </div>
                 )}
