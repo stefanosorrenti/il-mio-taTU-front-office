@@ -3,7 +3,13 @@ import { motion } from 'framer-motion'
 
 export default function AppCard({ tattoo }) {
     return (
-        <div className="card h-100 bg-black border border-secondary border-opacity-50 rounded-4 overflow-hidden shadow" data-bs-theme="dark">
+        <motion.div className="card h-100 bg-black border border-secondary border-opacity-50 rounded-4 overflow-hidden shadow" data-bs-theme="dark"
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true, amount: 0.1 }}
+
+        >
 
 
             <div className="ratio ratio-1x1 bg-black">
@@ -49,6 +55,6 @@ export default function AppCard({ tattoo }) {
                     </Link>
                 </motion.div>
             </div>
-        </div>
+        </motion.div>
     )
 }

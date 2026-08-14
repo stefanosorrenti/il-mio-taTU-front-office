@@ -5,6 +5,13 @@ import { NavLink, useLocation, Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 
 
+//FUNCTIONS
+
+function handleScrollToTattoos() {
+    if (tattoosRef.current) {
+        tattoosRef.current.scrollIntoView({ behavior: 'smooth' })
+    }
+}
 
 export default function AppHeader() {
 
@@ -33,9 +40,12 @@ export default function AppHeader() {
                                 <li className="nav-item">
                                     <NavLink className="nav-link" to="/">HOME</NavLink>
                                 </li>
-                                <li className="nav-item">
-                                    <NavLink className="nav-link" to="/404">TATTOO</NavLink>
-                                </li>
+                                {pathname === '/' && (
+                                    <li className="nav-item">
+                                        <NavLink className="nav-link" to="#tattoos-cards" onClick={handleScrollToTattoos}>TATTOO</NavLink>
+                                    </li>
+                                )}
+
                                 <li className="nav-item">
                                     <NavLink className="nav-link" to="/info">CHI SIAMO</NavLink>
                                 </li>
