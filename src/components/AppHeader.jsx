@@ -1,22 +1,25 @@
 //IMPORTS
 import logo from '../assets/images/logo.png'
 import AppJumbotron from './AppJumbotron'
-import { NavLink, useLocation, Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
+import { NavLink, useLocation, Link, } from 'react-router-dom'
 
-
-//FUNCTIONS
-
-function handleScrollToTattoos() {
-    if (tattoosRef.current) {
-        tattoosRef.current.scrollIntoView({ behavior: 'smooth' })
-    }
-}
 
 export default function AppHeader() {
 
+    //DATA
     /* Pathname */
     const { pathname } = useLocation()
+
+    //FUNCTIONS
+
+    //Funzione per scrollare alla sezione dei tatuaggi
+    function handleScrollToTattoos() {
+        const tattooCard = document.getElementById('tattoos-cards')
+        if (tattooCard) {
+            tattooCard.scrollIntoView({ behavior: 'smooth' })
+            //console.log(tattooCard)
+        }
+    }
 
     return (
         <>
@@ -42,7 +45,7 @@ export default function AppHeader() {
                                 </li>
                                 {pathname === '/' && (
                                     <li className="nav-item">
-                                        <NavLink className="nav-link" to="#tattoos-cards" onClick={handleScrollToTattoos}>TATTOO</NavLink>
+                                        <NavLink className="nav-link" onClick={handleScrollToTattoos}>TATTOO</NavLink>
                                     </li>
                                 )}
 
@@ -56,9 +59,9 @@ export default function AppHeader() {
 
 
 
+                {/* Jumbotron */}
+                {pathname === '/' && <AppJumbotron />}
             </header>
-            {/* Jumbotron */}
-            {pathname === '/' && <AppJumbotron />}
         </>
     )
 }

@@ -3,6 +3,8 @@ import { motion } from 'framer-motion'
 
 export default function AppCard({ tattoo }) {
     return (
+        
+        //Animazione della card 
         <motion.div className="card h-100 bg-black border border-secondary border-opacity-50 rounded-4 overflow-hidden shadow" data-bs-theme="dark"
             initial={{ opacity: 0, y: 60 }}
             whileInView={{ opacity: 1, y: 0 }}

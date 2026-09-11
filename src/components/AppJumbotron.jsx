@@ -1,20 +1,6 @@
 //IMPORTS
-import { motion, useScroll, useTransform } from "motion/react"
-import { Link } from "react-router-dom"
-import { useRef } from "react"
+import { motion } from "motion/react"
 export default function AppJumbotron() {
-    const heroRef = useRef(null)
-    // Framer Motion: progresso dello scroll relativo al Jumbotron
-    const { scrollYProgress } = useScroll({
-        target: heroRef,
-        offset: ["start start", "end start"],
-    })
-
-    // Framer Motion: effetto di uscita (fade + slide-up + lieve zoom-out)
-    const opacity = useTransform(scrollYProgress, [0, 1], [1, 0])
-    const y = useTransform(scrollYProgress, [0, 1], [0, -140])
-    const scale = useTransform(scrollYProgress, [0, 1], [1, 0.95])
-
 
     return (
 
@@ -22,12 +8,7 @@ export default function AppJumbotron() {
 
         <>
 
-            <motion.div
-                className="min-vh-100 w-100 d-flex flex-column justify-content-center align-items-center text-center bg-dark text-light position-relative overflow-hidden px-3"
-
-                ref={heroRef}
-                style={{ opacity, y, scale }}
-            >
+            <div className="min-vh-100 w-100 d-flex flex-column justify-content-center align-items-center text-center bg-black text-light position-relative overflow-hidden px-3 border-bottom border-warning border-top border-warning border-3 ">
                 <motion.span
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -56,7 +37,8 @@ export default function AppJumbotron() {
                     La piattaforma per condividere i tuoi tatuaggi e scoprire nuovi artisti.
                 </motion.p>
 
-            </motion.div>
+
+            </div>
 
 
         </>

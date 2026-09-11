@@ -2,15 +2,14 @@
 import AppAnimatedSmallCard from "../components/AppAnimatedSmallCard";
 import { motion } from "framer-motion";
 
-//DATA
-
-const emailInfo = "<a className='text-warning text-decoration-none fw-semibold' href='mailto:info@ilmio-tattu.com'>info@ilmio-tattu.com</a>"
 
 export default function AppInfoPage() {
+
+    
     return (
         <>
 
-            <div className="min-vh-100 d-flex flex-column justify-content-center align-items-center bg-dark text-center px-3 gap-4">
+            <div className="min-vh-100 d-flex flex-column justify-content-center align-items-center bg-dark  text-center px-3 gap-4">
 
                 {/* Titolo */}
                 <motion.h1 className="display-1 fw-bold text-white"
@@ -22,7 +21,7 @@ export default function AppInfoPage() {
                 </motion.h1>
 
                 {/* Sottotitolo */}
-                <motion.small className="lead text-secondary mb-4"
+                <motion.small className="lead text-secondary mb-4 "
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.1 }}
@@ -44,7 +43,7 @@ export default function AppInfoPage() {
 
 
                 {/* Informazioni contatto */}
-                <AppAnimatedSmallCard title="Contatti" description={`Per inviare i tuoi tatuaggi o per qualsiasi richiesta, contattaci via email all'indirizzo: ${emailInfo}`} />
+                <AppAnimatedSmallCard title="Contatti" description={`Per inviare i tuoi tatuaggi o per qualsiasi richiesta, contattaci via email all'indirizzo: info@ilmiotattu.com`} />
             </div>
         </>
     )

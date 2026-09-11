@@ -1,7 +1,6 @@
 //IMPORTS
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect} from 'react'
 import axios from 'axios'
-import { motion } from 'motion/react'
 import AppCard from '../components/AppCard'
 import AppSpinner from '../components/AppSpinner'
 
@@ -10,10 +9,6 @@ export default function AppHomePage() {
     const [tattoos, setTattoos] = useState([])
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(false)
-
-
-    //Use Ref
-    const tattoosRef = useRef(null)
 
     //Use Effect
     useEffect(() => {
@@ -51,17 +46,14 @@ export default function AppHomePage() {
 
                 {/* Stato: dati pronti */}
                 {!loading && !error && (
-                    <div
-                        className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4"
-                        ref={tattoosRef}
-                        id="tattoos-cards"
-                        >
+                    <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" id="tattoos-cards">
 
                         {tattoos.map((tattoo) => (
                             <div className="col" key={tattoo.id}>
                                 <AppCard tattoo={tattoo} />
                             </div>
                         ))}
+                        
                     </div>
                 )}
 

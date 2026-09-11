@@ -2,7 +2,6 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from 'react';
 import AppSpinner from '../components/AppSpinner';
-import { motion } from 'framer-motion';
 import axios from 'axios';
 import AppAnimatedButton from "../components/AppAnimatedButton";
 
@@ -21,7 +20,7 @@ export default function AppSingleTattooPage() {
     
     
 
-    //Use Effect
+    //Use Effect per recuperare i dati del tatuaggio specifico
     useEffect(() => {
 
         // Effettua operazioni al montaggio del componente
@@ -48,6 +47,7 @@ export default function AppSingleTattooPage() {
 
     }, []);
 
+
     //FUNCTIONS
 
     /* Funzione di condivisione (Web Share Api) */
@@ -60,7 +60,7 @@ export default function AppSingleTattooPage() {
         };
         if (navigator.share) {
             navigator.share(shareData)
-                .then(() => console.log('Condivisione avvenuta con successo'))
+                .then(() => console.log('Condivisione disponibile'))
                 .catch((error) => console.log('Errore nella condivisione:', error));
         } else {
             console.log('La condivisione non è supportata dal browser');
